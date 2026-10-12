@@ -33,6 +33,18 @@
             overflow-x: hidden;
         }
 
+        /* Анимация появления элементов */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         header {
             padding: 20px 40px;
             display: flex;
@@ -45,6 +57,7 @@
             width: 100%;
             top: 0;
             z-index: 100;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .logo {
@@ -130,13 +143,35 @@
             background: linear-gradient(135deg, #fff 30%, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+            opacity: 0;
         }
 
         hero p {
             font-size: 1.25rem;
             color: var(--text-muted);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             line-height: 1.6;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+            opacity: 0;
+        }
+
+        .stars-badge-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+            opacity: 0;
+        }
+
+        .stars-badge-container img {
+            height: 28px;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+
+        .stars-badge-container img:hover {
+            transform: scale(1.05);
         }
 
         .hero-btns {
@@ -144,6 +179,8 @@
             gap: 15px;
             justify-content: center;
             margin-bottom: 60px;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+            opacity: 0;
         }
 
         .code-preview {
@@ -155,6 +192,8 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             margin: 0 auto 80px;
             max-width: 750px;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+            opacity: 0;
         }
 
         .code-header {
@@ -211,6 +250,8 @@
             padding: 30px;
             border-radius: 12px;
             transition: transform 0.2s, border-color 0.2s;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+            opacity: 0;
         }
 
         .feature-card:hover {
@@ -248,7 +289,6 @@
 
     <header>
         <a href="#" class="logo">
-            <!-- Встроенная SVG иконка -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <rect width="512" height="512" rx="110" fill="#15151d"/>
                 <path d="M140 140v230h100v-40h-60v-190h-40z" fill="#b026ff"/>
@@ -267,6 +307,14 @@
     <hero>
         <h1>Минималистичный GUI без зависимостей</h1>
         <p>Легковесный Python-фреймворк с прямым вызовом Win32 API через ctypes. Никаких громоздких библиотек, абсолютная плавность и кастомный дизайн.</p>
+        
+        <!-- Динамический бейдж со звёздами GitHub -->
+        <div class="stars-badge-container">
+            <a href="https://github.com/meowler343/LopGui" target="_blank">
+                <img src="https://img.shields.io/github/stars/meowler343/LopGui?style=social" alt="GitHub stars">
+            </a>
+        </div>
+
         <div class="hero-btns">
             <a href="https://github.com/meowler343/LopGui" target="_blank" class="btn">Скачать с GitHub</a>
             <a href="#quickstart" class="btn btn-outline">Быстрый старт</a>
