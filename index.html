@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LopGui — Zero-Dependency Native Python GUI</title>
+    <!-- Иконка сайта (Favicon) в формате SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='110' fill='%2315151d'/><path d='M140 140v230h100v-40h-60v-190h-40z' fill='%23b026ff'/><path d='M250 140c-40 0-70 30-70 70s30 70 70 70h50v-40h-50c-16 0-30-14-30-30s14-30 30-30h40v90h40v-110h-80z' fill='%23c44eff'/><path d='M330 310l60 60-25 10-15-35-20 20z' fill='%23b026ff'/></svg>">
     <style>
         :root {
             --bg-color: #0d0d12;
@@ -51,7 +53,14 @@
             color: var(--text-main);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo svg {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
         }
 
         .logo span {
@@ -238,7 +247,16 @@
 <body>
 
     <header>
-        <div class="logo">Lop<span>Gui</span></div>
+        <a href="#" class="logo">
+            <!-- Встроенная SVG иконка -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <rect width="512" height="512" rx="110" fill="#15151d"/>
+                <path d="M140 140v230h100v-40h-60v-190h-40z" fill="#b026ff"/>
+                <path d="M250 140c-40 0-70 30-70 70s30 70 70 70h50v-40h-50c-16 0-30-14-30-30s14-30 30-30h40v90h40v-110h-80z" fill="#c44eff"/>
+                <path d="M330 310l60 60-25 10-15-35-20 20z" fill="#b026ff"/>
+            </svg>
+            Lop<span>Gui</span>
+        </a>
         <div class="nav-links">
             <a href="#features">Возможности</a>
             <a href="#quickstart">Установка</a>
